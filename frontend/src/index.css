@@ -1,0 +1,7 @@
+/* Global styles - Chakra handles most styling */
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #F8FAFF;
+}
