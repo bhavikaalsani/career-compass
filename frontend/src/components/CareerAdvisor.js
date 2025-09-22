@@ -27,6 +27,8 @@ export default function CareerAdvisor() {
 
   const { colorMode, toggleColorMode } = useColorMode();
   const boxBg = useColorModeValue("gray.100", "gray.800");
+  const inputBg = useColorModeValue("white", "gray.700");
+  const textColor = useColorModeValue("gray.800", "white");
 
   const handleSubmit = async () => {
     if (!skills || !interests || !goal) {
@@ -46,7 +48,7 @@ export default function CareerAdvisor() {
       setGoal("");
     } catch (err) {
       console.error(err);
-      setError(err.response?.data?.msg || "Something went wrong.");
+      setError(err.response?.data?.msg || "Something went wrong. Try again.");
     } finally {
       setLoading(false);
     }
@@ -59,7 +61,7 @@ export default function CareerAdvisor() {
   return (
     <Box maxW="lg" mx="auto" p={6} bg={boxBg} rounded="lg" shadow="md">
       <HStack justifyContent="space-between" mb={4}>
-        <Heading>Career Advisor</Heading>
+        <Heading size="md" color={textColor}>Career Advisor</Heading>
         <IconButton
           icon={colorMode === "light" ? <FaMoon /> : <FaSun />}
           onClick={toggleColorMode}
@@ -72,18 +74,29 @@ export default function CareerAdvisor() {
           placeholder="Your skills (comma separated)"
           value={skills}
           onChange={(e) => setSkills(e.target.value)}
+          bg={inputBg}
+          color={textColor}
         />
         <Input
           placeholder="Your interests"
           value={interests}
           onChange={(e) => setInterests(e.target.value)}
+          bg={inputBg}
+          color={textColor}
         />
         <Textarea
           placeholder="Your goal"
           value={goal}
           onChange={(e) => setGoal(e.target.value)}
+          bg={inputBg}
+          color={textColor}
         />
-        <Button colorScheme="blue" onClick={handleSubmit} isDisabled={loading} w="full">
+        <Button
+          colorScheme="blue"
+          onClick={handleSubmit}
+          isDisabled={loading}
+          w="full"
+        >
           {loading ? <Spinner size="sm" /> : "Get Advice"}
         </Button>
 
@@ -94,9 +107,14 @@ export default function CareerAdvisor() {
         )}
 
         {result && (
-          <Box bg="gray.700" color="white" p={4} rounded="md" w="full">
+          <Box bg="blue.700" color="white" p={4} rounded="md" w="full">
             <Text mb={2}>{result}</Text>
-            <Button size="sm" leftIcon={<FaCopy />} onClick={handleCopy} colorScheme="teal">
+            <Button
+              size="sm"
+              leftIcon={<FaCopy />}
+              onClick={handleCopy}
+              colorScheme="teal"
+            >
               Copy Advice
             </Button>
           </Box>
