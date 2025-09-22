@@ -1,3 +1,4 @@
+// frontend/src/App.js
 import React, { useState } from "react";
 import {
   Box,
@@ -24,14 +25,13 @@ import {
 } from "@chakra-ui/react";
 import { FiSearch } from "react-icons/fi";
 import { FaSun, FaMoon, FaCopy } from "react-icons/fa";
-import API from "./api"; // Make sure this path is correct
+import CareerAdvisor from "./components/CareerAdvisor";
 
 function StatCard({ label, value, help }) {
-  const cardBg = useColorModeValue("white", "gray.700");
   return (
-    <Stat p={4} bg={cardBg} borderRadius="12px" boxShadow="sm">
+    <Stat p={4} bg="white" borderRadius="12px" boxShadow="sm">
       <StatLabel>{label}</StatLabel>
-      <StatNumber fontSize="2xl" color="blue.500">
+      <StatNumber fontSize="2xl" color="blue.700">
         {value}
       </StatNumber>
       <StatHelpText>{help}</StatHelpText>
@@ -40,56 +40,14 @@ function StatCard({ label, value, help }) {
 }
 
 export default function App() {
-  // ---- State for advice form ----
-  const [skills, setSkills] = useState("");
-  const [interests, setInterests] = useState("");
-  const [goal, setGoal] = useState("");
-  const [advice, setAdvice] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-
   const { colorMode, toggleColorMode } = useColorMode();
-
-  // Colors for boxes and text
-  const pageBg = useColorModeValue("gray.100", "gray.900");
-  const cardBg = useColorModeValue("white", "gray.700");
-  const adviceBg = useColorModeValue("gray.50", "gray.800");
-  const recentBg = useColorModeValue("gray.50", "gray.700");
-  const projectBoxBg = useColorModeValue("blue.50", "blue.900");
-  const projectTextColor = useColorModeValue("blue.800", "blue.200");
-
-  const handleGetAdvice = async () => {
-    if (!skills || !interests || !goal) {
-      setError("Please fill all fields.");
-      return;
-    }
-    setError("");
-    setAdvice("");
-    setLoading(true);
-
-    try {
-      const res = await API.post("/advisor", { skills, interests, goal });
-      setAdvice(res.data.advice);
-      setSkills("");
-      setInterests("");
-      setGoal("");
-    } catch (err) {
-      console.error(err);
-      setError(err.response?.data?.msg || "Something went wrong.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleCopy = () => {
-    if (advice) navigator.clipboard.writeText(advice);
-  };
+  const boxBg = useColorModeValue("gray.100", "gray.800");
 
   return (
-    <Box minH="100vh" bg={pageBg} p={6}>
+    <Box minH="100vh" bg={boxBg} p={6}>
       {/* ---- Top Bar ---- */}
       <Flex justify="space-between" align="center" mb={6}>
-        <Heading size="lg" color="blue.500">
+        <Heading size="lg" color="blue.700">
           Career Compass Dashboard
         </Heading>
         <HStack spacing={4}>
@@ -108,31 +66,13 @@ export default function App() {
         </HStack>
       </Flex>
 
-      {/* ---- Project Explanation ---- */}
-      {/* ---- Project Explanation ---- */}
-<Box mb={6} p={4} bg={projectBoxBg} borderRadius="12px" boxShadow="sm">
-  {/* App description */}
-  <Text fontSize="md" color={projectTextColor} mb={2}>
-    Welcome to Career Compass Dashboard! This tool provides personalized career guidance
-    based on your skills, interests, and goals. Get tailored advice, explore matched jobs,
-    and track your applications—all in one place.
-  </Text>
-
-  {/* Prototype/funding message */}
-  <Text fontSize="sm" color={useColorModeValue("red.600", "red.300")}>
-    Note: This is a prototype. The API key is not working in this version, 
-    so live advice is limited. Full functionality requires proper funding to run the API and backend services.
-  </Text>
-</Box>
-
-
       {/* ---- Search ---- */}
-      <Box mb={6} bg={cardBg} borderRadius="12px" p={4} boxShadow="sm">
+      <Box mb={6} bg={boxBg} borderRadius="12px" p={4} boxShadow="sm">
         <Flex align="center" gap={4}>
           <Input
             placeholder="Search jobs, skills, or companies"
             variant="filled"
-            bg={useColorModeValue("gray.50", "gray.600")}
+            bg={useColorModeValue("gray.50", "gray.700")}
           />
           <Button colorScheme="blue" leftIcon={<Icon as={FiSearch} />}>
             Search
@@ -142,89 +82,32 @@ export default function App() {
 
       {/* ---- Stats ---- */}
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} mb={6}>
-        <StatCard
-          label="Profile Strength"
-          value="92%"
-          help="Based on resume and assessments"
-        />
+        <StatCard label="Profile Strength" value="92%" help="Based on resume and assessments" />
         <StatCard label="Matched Jobs" value="24" help="Roles matching your profile" />
         <StatCard label="Applications" value="18" help="Submitted this month" />
       </SimpleGrid>
 
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
         {/* ---- Personalized Advice Form ---- */}
-        <Box bg={adviceBg} p={6} borderRadius="12px" boxShadow="sm">
-          <Heading size="md" mb={4} color="blue.500">
-            Personalized Advice
-          </Heading>
-          <Text mb={4}>Enter your details to get tailored guidance.</Text>
-          <Stack spacing={3} mb={4}>
-            <Input
-              placeholder="Your skills (comma separated)"
-              value={skills}
-              onChange={(e) => setSkills(e.target.value)}
-            />
-            <Input
-              placeholder="Your interests"
-              value={interests}
-              onChange={(e) => setInterests(e.target.value)}
-            />
-            <Textarea
-              placeholder="Your goal"
-              value={goal}
-              onChange={(e) => setGoal(e.target.value)}
-            />
-          </Stack>
-          <Button
-            colorScheme="blue"
-            onClick={handleGetAdvice}
-            isDisabled={loading}
-            w="full"
-          >
-            {loading ? <Spinner size="sm" /> : "Get Advice"}
-          </Button>
-
-          {error && (
-            <Box mt={4} p={3} bg="red.500" color="white" borderRadius="8px">
-              <Text>{error}</Text>
-            </Box>
-          )}
-
-          {advice && (
-            <Box mt={4} p={4} bg="gray.700" color="white" borderRadius="8px">
-              <Text fontWeight="semibold" mb={2}>
-                Advice:
-              </Text>
-              <Text mb={2}>{advice}</Text>
-              <Button
-                size="sm"
-                leftIcon={<FaCopy />}
-                onClick={handleCopy}
-                colorScheme="teal"
-              >
-                Copy Advice
-              </Button>
-            </Box>
-          )}
-        </Box>
-
+        <CareerAdvisor />
+        
         {/* ---- Recent Matches ---- */}
-        <Box bg={recentBg} p={6} borderRadius="12px" boxShadow="sm">
-          <Heading size="md" mb={4} color="blue.500">
+        <Box bg={boxBg} p={6} borderRadius="12px" boxShadow="sm">
+          <Heading size="md" mb={4} color="blue.700">
             Recent Matches
           </Heading>
           <Stack spacing={3}>
-            <Box p={3} borderRadius="8px" bg={recentBg}>
+            <Box p={3} borderRadius="8px" bg={useColorModeValue("gray.50", "gray.700")}>
               <Flex justify="space-between">
                 <Text fontWeight="600">ML Engineer</Text>
-                <Text color="blue.400">Apply</Text>
+                <Text color="blue.600">Apply</Text>
               </Flex>
               <Text fontSize="sm">Company X • Remote</Text>
             </Box>
-            <Box p={3} borderRadius="8px" bg={recentBg}>
+            <Box p={3} borderRadius="8px" bg={useColorModeValue("gray.50", "gray.700")}>
               <Flex justify="space-between">
                 <Text fontWeight="600">Data Scientist</Text>
-                <Text color="blue.400">Apply</Text>
+                <Text color="blue.600">Apply</Text>
               </Flex>
               <Text fontSize="sm">Company Y • Bangalore</Text>
             </Box>
@@ -233,7 +116,7 @@ export default function App() {
       </SimpleGrid>
 
       <Box mt={6} textAlign="center">
-        <Text fontSize="sm" color={useColorModeValue("gray.600", "gray.400")}>
+        <Text fontSize="sm" color="gray.600">
           Made with ❤️ for your dream internship
         </Text>
       </Box>

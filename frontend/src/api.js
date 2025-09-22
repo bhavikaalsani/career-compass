@@ -1,13 +1,11 @@
-// frontend/src/api.js
 import axios from "axios";
 
-// Use environment variable if set (e.g. VITE_API_URL or REACT_APP_API_URL)
-const baseURL =
-  process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+// Make sure this is your deployed backend URL
+const API = axios.create({
+  baseURL: "https://career-compass-13.onrender.com/api",
+});
 
-const API = axios.create({ baseURL });
-
-// Automatically add token (if logged in)
+// Optional: automatically attach token if you have authentication
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem("token");
   if (token) {
