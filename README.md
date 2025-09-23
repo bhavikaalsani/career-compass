@@ -69,3 +69,4 @@ npm start
 
 • Deploy mobile version with React Native
 
+## the deployed link: https://career-compass-15.onrender.com/
