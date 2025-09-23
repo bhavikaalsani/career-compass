@@ -44,8 +44,17 @@ npm start
 
 
 
-ScreenShorts
-![image alt](https://github.com/bhavikaalsani/career-compass/blob/main/Screenshot%202025-09-23%20173003.png?raw=true)
+## 📸 Screenshots & Demo  
+
+### Dashboard  
+![Career Compass Dashboard](assets/dashboard.png)  
+
+### Recommendation Page  
+<img src="assets/recommendation.png" alt="Recommendation Page" width="700"/>  
+
+### Demo  
+![Career Compass Demo](assets/demo.gif)
+
 📊 Results
 
 ✅ 50+ users tested
