@@ -41,6 +41,11 @@ npm start
 
 # Run frontend
 npm start
+
+
+
+ScreenShorts
+![image alt](https://github.com/bhavikaalsani/career-compass/blob/main/Screenshot%202025-09-23%20173003.png?raw=true)
 📊 Results
 
 ✅ 50+ users tested
