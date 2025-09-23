@@ -46,14 +46,7 @@ npm start
 
 ## 📸 Screenshots & Demo  
 
-### Dashboard  
-![Career Compass Dashboard](assets/dashboard.png)  
-
-### Recommendation Page  
-<img src="assets/recommendation.png" alt="Recommendation Page" width="700"/>  
-
-### Demo  
-![Career Compass Demo](assets/demo.gif)
+go to ''Images'' folder
 
 📊 Results
 
