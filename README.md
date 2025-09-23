@@ -41,8 +41,7 @@ npm start
 
 # Run frontend
 npm start
-👉Screenshots / Demo
-<img width="959" height="423" alt="Image" src="https://github.com/user-attachments/assets/69b73d8d-593b-4258-82ad-42c3b0fee6b0" />📊 Results
+📊 Results
 
 ✅ 50+ users tested
 
