@@ -109,16 +109,13 @@ export default function App() {
 
       {/* Project Info Boxes */}
       <Box mb={6} p={4} bg={projectBoxBg} borderRadius="12px" boxShadow="sm">
-        <Text fontSize="md" color={projectTextColor} mb={2}>
-          Welcome to Career Compass Dashboard! Get personalized career guidance
-          based on your skills, interests, and goals. Track applications,
-          explore matched jobs, and get expert advice.
-        </Text>
-        <Text fontSize="sm" color={useColorModeValue("red.600", "red.300")}>
-          Prototype notice: Some features may require backend API support to
-          work fully.
-        </Text>
-      </Box>
+  <Text fontSize="md" color={projectTextColor}>
+    Welcome to Career Compass Dashboard! This is currently a prototype. 
+    The API key is not working in this version, so live advice is limited. 
+    Full functionality will require proper funding to run the API and backend services. 
+    Explore the features and see how personalized career guidance can work!
+  </Text>
+</Box>
 
       <Box mb={6} p={4} bg={projectBoxBg} borderRadius="12px" boxShadow="sm">
         <Text fontSize="md" color={projectTextColor} mb={2}>
