@@ -1,9 +1,9 @@
-🚀 Career Compass – AI Career Guidance Platform
+# 🚀 Career Compass – AI Career Guidance Platform
 
 An AI-powered full-stack web application that provides personalized career advice and job recommendations.
 Built using React, Node.js, MongoDB, and Chakra UI, deployed on Render, with JWT-based secure authentication.
 
-🔹 Features
+# 🔹 Features
 
 🎯 AI-powered personalized career guidance
 
@@ -15,7 +15,7 @@ Built using React, Node.js, MongoDB, and Chakra UI, deployed on Render, with JWT
 
 📊 Tested with 50+ users (30% improvement in recommendation accuracy)
 
-🛠 Tech Stack
+# 🛠 Tech Stack
 
 Frontend: React.js, Chakra UI
 Backend: Node.js, Express.js
@@ -23,7 +23,7 @@ Database: MongoDB
 Authentication: JWT
 Deployment: Render
 
-📦 Installation & Setup
+# 📦 Installation & Setup
 # Clone the repository
 git clone https://github.com/bhavikaalsani/career-compass.git
 
@@ -44,7 +44,7 @@ npm start
 # Run frontend
 npm start
 
-📸 Screenshots & Demo
+# 📸 Screenshots & Demo
 
 Go to the Images folder in the repository.
 
@@ -54,7 +54,7 @@ Go to the Images folder in the repository.
 
 📈 Achieved 30% improvement in recommendation accuracy
 
-🚀 Future Improvements
+# 🚀 Future Improvements
 
 Add more career datasets across domains
 
@@ -62,6 +62,6 @@ Integrate LinkedIn API for real-time job recommendations
 
 Build a mobile app version using React Native
 
-🔗 Live Deployment
+# 🔗 Live Deployment
 
 👉 Deployed Link: https://career-compass-15.onrender.com/
