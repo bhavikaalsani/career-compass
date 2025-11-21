@@ -1,28 +1,30 @@
-- 🚀 Career Compass – AI Career Guidance Platform  
+🚀 Career Compass – AI Career Guidance Platform
 
-An **AI-powered full-stack web application** that provides **personalized career advice and job recommendations**.  
-Built using **React, Node.js, MongoDB, and Chakra UI**, deployed on **Render**, with JWT-based secure authentication.  
+An AI-powered full-stack web application that provides personalized career advice and job recommendations.
+Built using React, Node.js, MongoDB, and Chakra UI, deployed on Render, with JWT-based secure authentication.
 
----• 🔹 Features  
-- 🎯 Personalized career guidance with **AI-powered recommendations**  
-- 🌙 **Dark/Light mode UI** using Chakra UI  
-- 🔒 **JWT Authentication** for secure login and API access  
-- ☁️ **Deployed on Render Cloud** for scalable and safe deployment  
-- 📊 Tested with **50+ users**, improving recommendation accuracy by **30%**  
+🔹 Features
 
----• 🛠 Tech Stack  
-- **Frontend:** React.js, Chakra UI  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
-- **Authentication:** JWT  
-- **Deployment:** Render  
+🎯 AI-powered personalized career guidance
 
----
+🌙 Dark/Light mode UI with Chakra UI
 
---- •📦 Installation & Setup  
+🔒 JWT Authentication for secure login and API access
 
-```bash
-# Clone this repository
+☁️ Deployed on Render Cloud for scalable hosting
+
+📊 Tested with 50+ users (30% improvement in recommendation accuracy)
+
+🛠 Tech Stack
+
+Frontend: React.js, Chakra UI
+Backend: Node.js, Express.js
+Database: MongoDB
+Authentication: JWT
+Deployment: Render
+
+📦 Installation & Setup
+# Clone the repository
 git clone https://github.com/bhavikaalsani/career-compass.git
 
 # Navigate to project folder
@@ -42,26 +44,24 @@ npm start
 # Run frontend
 npm start
 
+📸 Screenshots & Demo
 
-
-## 📸 Screenshots & Demo  
-
-go to ''Images'' folder
-![Dashboard Dark Mode](https://raw.githubusercontent.com/bhavikaalsani/career-compass/main/images/dark-dashboard.png)
-
+Go to the Images folder in the repository.
 
 📊 Results
 
-✅ 50+ users tested
+✅ Tested with 50+ users
 
-📈 30% improvement in recommendation accuracy based on feedback
+📈 Achieved 30% improvement in recommendation accuracy
 
 🚀 Future Improvements
 
-• Add more career datasets for diverse domains
+Add more career datasets across domains
 
-• Integrate with LinkedIn API for real-time job recommendations
+Integrate LinkedIn API for real-time job recommendations
 
-• Deploy mobile version with React Native
+Build a mobile app version using React Native
 
-## the deployed link: https://career-compass-15.onrender.com/
+🔗 Live Deployment
+
+👉 Deployed Link: https://career-compass-15.onrender.com/
