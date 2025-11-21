@@ -47,6 +47,7 @@ npm start
 # 📸 Screenshots & Demo
 
 Go to the Images folder in the repository.
+![alt text](./images/dark-dashbord.png)
 ![alt text](./images/demo.png)
 
 📊 Results
