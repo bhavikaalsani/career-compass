@@ -47,7 +47,7 @@ npm start
 ## 📸 Screenshots & Demo  
 
 go to ''Images'' folder
-![Alt Text](https://github.com/bhavikaalsani/career-compass/blob/main/images/dark-dashbord.png)
+![Dashboard Dark Mode](https://raw.githubusercontent.com/bhavikaalsani/career-compass/main/images/dark-dashbord.png)
 
 
 📊 Results
